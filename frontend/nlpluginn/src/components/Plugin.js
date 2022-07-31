@@ -7,7 +7,7 @@ import { Formik } from "formik";
 
 
 const Plugin = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const userSubmit = async (formdata) => {
     console.log(formdata);
 
@@ -33,7 +33,7 @@ const Plugin = () => {
         title: "Nice",
         text: "well done!",
       });
-      navigate("/Welcome");
+      // navigate("/Welcome");
     } else {
       console.log(response.status);
       console.log("something went wrong ");

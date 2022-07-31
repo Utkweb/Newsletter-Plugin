@@ -2,9 +2,13 @@ import React from 'react'
 import { Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as Yup from 'yup';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const userForm = {
     username: "",
     email: "",
@@ -13,8 +17,31 @@ const Signup = () => {
   };
 
   // 2. Create a function for form submission
-  const userSubmit = (formdata) => {
-    console.log(formdata);
+  const userSubmit = async (formdata) => {
+    const response = await fetch("http://localhost:5001/user/add", {
+      method: "POST",
+      body: JSON.stringify(formdata), //converting JS to JSON
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.status === 200) {
+      console.log("Success");
+      Swal.fire({
+        title: "Success",
+        text: "User added successfully😁👍",
+        icon: "success",
+      });
+      navigate("/login");
+    } else {
+      console.log("Something went wrong");
+      Swal.fire({
+        title: "Error",
+        text: "Something went wrong😔",
+        icon: "error",
+      });
+    }
   };
 
 
