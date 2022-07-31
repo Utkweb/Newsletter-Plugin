@@ -6,11 +6,14 @@ import UserManager from './components/UserManager';
 import UpdateUser from './components/UpdateUser';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Header from './components/Header';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <Header></Header>
+
       <Routes>
         <Route element={<Welcome/>} path='welcome'/>
         <Route element={<Plugin/>} path='plugin'/>
