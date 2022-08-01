@@ -1,10 +1,10 @@
-import { Button } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
-import UpdateUser from "./UpdateUser";
+import React, { useEffect, useState } from 'react'
+import Swal from 'sweetalert2';
+import { Button} from "@mui/material";
+import UpdateUser from './UpdateUser';
 
-const UserManager = () => {
-  const [userArray, setUserArray] = useState([]);
+const UserManager1 = () => {
+    const [userArray, setUserArray] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const [showUpdateForm, setShowUpdateForm] = useState(false);
@@ -13,7 +13,7 @@ const UserManager = () => {
   const getDataFromBackend = async () => {
     setLoading(true);
 
-    const response = await fetch("http://localhost:5001/subs/getall");
+    const response = await fetch("http://localhost:5001/user/getall");
     const data = await response.json();
 
     console.log(data);
@@ -24,7 +24,7 @@ const UserManager = () => {
   const deleteUser = async (id) => {
     console.log(id);
 
-    const response = await fetch("http://localhost:5001/subs/delete" + id, {
+    const response = await fetch("http://localhost:5001/user/delete" + id, {
       method: "Delete",
     });
     if (response.status === 200) {
@@ -71,14 +71,16 @@ const UserManager = () => {
         </div>
       );
     } else {
-      return userArray.map(({ _id, fname, email }) => (
+      return userArray.map(({ _id, firstname, lastname, email,password }) => (
         <tr key={_id}>
-          <td>{fname}</td>
+          <td>{firstname}</td>
+          <td>{lastname}</td>
           <td>{email}</td>
+          <td>{password}</td>
           <td>
             <Button
               className="btn btn-primary"
-              onClick={(e) => updateUser({ _id, fname, email })}
+              onClick={(e) => updateUser({ _id, firstname, lastname, email,password })}
             >
               {" "}
               <i class="fas fa-pen-nib"></i>
@@ -95,14 +97,16 @@ const UserManager = () => {
   };
   return (
     <div>
-      <h1 className="text-center">Subscriber Manager</h1>
+      <h1 className="text-center">User Manager</h1>
       <div className="row">
         <div className="col-md">
           <table className="table table-dark">
             <thead>
               <tr>
-                <th>Full Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th>Email</th>
+                <th>Password</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
@@ -126,4 +130,5 @@ const UserManager = () => {
   );
 };
 
-export default UserManager;
+
+export default UserManager1

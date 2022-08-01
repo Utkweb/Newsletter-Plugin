@@ -2,11 +2,10 @@
 const {Schema, model} = require('../connection');
 
 const myschema = new Schema({
-    username:String,
+    firtsname:String,
+    lastname:String,
     email:String,
-    contact:String,
     password:String,
-    createdAt:Date,
 });
 
 module.exports = model('users',myschema);
