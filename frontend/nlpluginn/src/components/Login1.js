@@ -61,7 +61,7 @@ const Login1 = () => {
                 <div className="form-outline mb-4">
                   <input
                     type="email"
-                    id="form1Example13"
+                    id="email"
                     className="form-control form-control-lg"
                     value={values.email}
                     onChange={handleChange}
@@ -75,7 +75,7 @@ const Login1 = () => {
                 <div className="form-outline mb-4">
                   <input
                     type="password"
-                    id="form1Example23"
+                    id="password"
                     className="form-control form-control-lg"
                     value={values.password}
                     onChange={handleChange}

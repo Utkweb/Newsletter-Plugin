@@ -18,13 +18,16 @@ const SignUp1 = () => {
 
   // 2. Create a function for form submission
   const userSubmit = async (formdata) => {
+    console.log(formdata);
+
     const response = await fetch("http://localhost:5001/user/add", {
       method: "POST",
       body: JSON.stringify(formdata), //converting JS to JSON
       headers: {
         "Content-Type": "application/json",
       },
-    });
+      
+    }    );
 
     if (response.status === 200) {
       console.log("Success");
