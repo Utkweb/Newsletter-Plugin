@@ -1,9 +1,10 @@
 *{
     font-family: Montserrat;
+
 }
 body{
     
-    background:linear-gradient( #FFE25A,#FFA852);
+    /* background:linear-gradient( #FFE25A,#FFA852); */
     
     background-size: cover;
     background-position: center;
