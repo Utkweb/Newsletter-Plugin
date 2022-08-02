@@ -24,7 +24,7 @@ const UserManager = () => {
   const deleteUser = async (id) => {
     console.log(id);
 
-    const response = await fetch("http://localhost:5001/subs/delete" + id, {
+    const response = await fetch("http://localhost:5001/subs/delete/" + id, {
       method: "Delete",
     });
     if (response.status === 200) {
@@ -85,7 +85,8 @@ const UserManager = () => {
             </Button>
           </td>
           <td>
-            <Button className="btn btn-danger" onClick={(e) => deleteUser(_id)}>
+            <Button className="btn btn-danger"
+             onClick={(e) => deleteUser(_id)}>
               <i class="fas fa-trash"></i>{" "}
             </Button>
           </td>

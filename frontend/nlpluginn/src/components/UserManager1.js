@@ -24,7 +24,7 @@ const UserManager1 = () => {
   const deleteUser = async (id) => {
     console.log(id);
 
-    const response = await fetch("http://localhost:5001/user/delete" + id, {
+    const response = await fetch("http://localhost:5001/user/delete/" + id, {
       method: "Delete",
     });
     if (response.status === 200) {
