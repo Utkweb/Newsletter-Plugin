@@ -114,7 +114,7 @@ const UserManager = () => {
         {showUpdateForm ? (
           <div className="col-md">
             <UpdateUser
-              updateFormData={updateFormData}
+              updateFormData={setUpdateFormData}
               setShowUpdateForm={setShowUpdateForm}
               getDataFromBackend={getDataFromBackend}
             />
