@@ -52,10 +52,10 @@ const UserManager = () => {
   }, []);
 
   const sendMail = async (recAddress) => {
-    const res = await fetch('http://localhost:5000/util/sendmail', {
+    const res = await fetch('http://localhost:5001/util/sendmail', {
       method : 'POST',
       body : JSON.stringify({
-        from: "newsletterproject2022@gmail.com", // sender address
+        from: "us196000@gmail.com", // sender address
         to: recAddress, // list of receivers
         subject: subject,
         html : letterContent

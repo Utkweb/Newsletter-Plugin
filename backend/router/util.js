@@ -7,15 +7,15 @@ const transporter = nodemailer.createTransport({
   port: 465, // true for 465, false for other ports
   host: "smtp.gmail.com",
   auth: {
-    user: "newsletterpluginfree@gmail.com",
-    pass: "ymmmiupcfswlyppb",
+    user: "us196000@gmail.com",
+    pass: "qqbepaaqmmrnvbvg",
   },
   secure: true,
 });
 
 const mailData = {
-  from: "newsletterpluginfree@gmail.com", // sender address
-  to: "harshsrivastava870@gmail.com", // list of receivers
+  from: "us196000@gmail.com", // sender address
+  to: "singhapoorv032@gmail.com", // list of receivers
   subject: "Sending Email using Node.js",
   text: "That was easy!",
   html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer<br/>",
