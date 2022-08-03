@@ -118,7 +118,7 @@ const UserManager = () => {
           <td>
             <Button className="btn btn-danger"
              onClick={(e) => deleteUser(_id)}>
-              <i class="fas fa-trash"></i>{" "}
+              <i class="fas fa-trash"></i>{"  "}
             </Button>
           </td>
         </tr>

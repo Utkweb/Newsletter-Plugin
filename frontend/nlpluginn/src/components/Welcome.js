@@ -6,14 +6,13 @@ import { NavLink } from "react-router-dom";
 const Welcome = () => {
   return (
     <div>
-      <section className="first">
-        <div className="container mt-4">
-          <div className="row-bg-wrap">
-            <div className="row-bg"></div>
-            <div className="col-12 dark">
-              <div className="col-6 home-text">
-                <h1>Newsletter Plugin</h1>
-                <p>
+      <section>
+        <div class="row first ">
+          <div class="col-sm-6 mt-4">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title">Newsletter Plugin</h1>
+                <p class="card-text">
                   Newsletter is the most advanced email marketing plugin for
                   WordPress: it manages everything
                   <br />
@@ -23,10 +22,15 @@ const Welcome = () => {
                   You can add even more powerful features through our premium
                   addons.
                 </p>
-
-                <Button>Get started</Button>
+                <a href="#" class="btn btn-primary">
+                  Get started
+                </a>
               </div>
-              <div className="col-6 home-img">
+            </div>
+          </div>
+          <div class="col-sm-6 mt-4">
+            <div class="card w-75">
+              <div class="card-body">
                 <img
                   src="https://s3.xopic.de/openwho-public/pages/monthly_newsletter/1xrYarIMbqTz4F0NHx65ud/May_newsletter_thumb.PNG"
                   alt=""
