@@ -5,7 +5,7 @@ import './Plugin.css';
 import { Formik } from "formik";
 
 
-const Plugin = () => {
+const Plugin = ({ownerKey}) => {
   // const navigate = useNavigate();
   const userSubmit = async (formdata) => {
     console.log(formdata);
@@ -49,6 +49,7 @@ const Plugin = () => {
       <Formik initialValues={{
         name: '',
         email: '',
+        owner: ownerKey
       }}
       onSubmit = {userSubmit}
       >

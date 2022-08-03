@@ -10,13 +10,15 @@ const UserManager = () => {
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [updateFormData, setUpdateFormData] = useState(null);
 
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")));
+
   const [letterContent, setLetterContent] = useState("");
   const [subject, setSubject] = useState("");
 
   const getDataFromBackend = async () => {
     setLoading(true);
 
-    const response = await fetch("http://localhost:5001/subs/getall");
+    const response = await fetch("http://localhost:5001/subs/getbyowner/"+currentUser._id);
     const data = await response.json();
 
     console.log(data);
@@ -127,6 +129,7 @@ const UserManager = () => {
   };
   return (
     <div>
+      <h2>Owner ID : {currentUser._id}</h2>
       <h1 className="text-center">Subscriber Manager</h1>
       <div className="row">
         <div className="col-md">
