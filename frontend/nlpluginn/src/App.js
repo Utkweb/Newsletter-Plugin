@@ -14,7 +14,6 @@ function App() {
     <div>
       <BrowserRouter>
         <Header></Header>
-
         <Routes>
           <Route element={<Welcome />} path="/" />
           <Route element={<Plugin />} path="plugin" />
