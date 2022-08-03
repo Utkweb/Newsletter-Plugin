@@ -1,14 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import './Subscribe.css'
 
 const Header = () => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Navbar
-          </a>
+          <NavLink class="navbar-brand" to="/">
+            <img className="w-50" src="https://www.thenewsletterplugin.com/wp-content/uploads/2014/12/tnp-logo-black-header.png" alt=""/>
+          </NavLink>
           <button
             class="navbar-toggler"
             type="button"
@@ -21,20 +22,27 @@ const Header = () => {
             <i class="fas fa-bars"></i>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <NavLink className="nav-link active" aria-current="page" to='/welcome'>
-                Home
+            <div class="navbar-nav list">
+              <NavLink className="nav-link active text-muted" aria-current="page" to='/'>
+                Premium
               </NavLink>
-              <a class="nav-link" href="#">
-                Features
-              </a>
-              <a class="nav-link" href="#">
-                Pricing
-              </a>
-              <a class="nav-link disabled">Disabled</a>
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-              </span>
+              <NavLink className="nav-link text-muted" to="#">
+                Documentation
+              </NavLink>
+              <NavLink className="nav-link text-muted" to="#">
+                Support
+              </NavLink>
+              <NavLink className="nav-link text-muted" to="#">
+                Account
+              </NavLink>
+              <NavLink className="nav-link text-muted" to="#">
+                Blog
+              </NavLink>
+              <NavLink className="nav-link text-muted" to="#">
+                Contact
+              </NavLink>
+                {/* <i class="fas fa-search"></i> */}
+            
             </div>
           </div>
         </div>

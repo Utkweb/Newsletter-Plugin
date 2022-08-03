@@ -4,6 +4,7 @@ const port = 5001;
 const userRouter =require('./router/userRouter');
 const subsRouter =require('./router/subsRouter');
 const newsletterRouter =require('./router/newsletterRouter');
+const utilRouter =require('./router/util');
 const cors = require('cors');
 
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use(cors({origin:'http://localhost:3000'}));
 app.use('/user',userRouter);
 app.use('/subs',subsRouter);
 app.use('/news',newsletterRouter);
+app.use('/util',utilRouter);
 
 app.get('/home',(req,res)=>{
     res.send('Namaste Duniyaaa!');

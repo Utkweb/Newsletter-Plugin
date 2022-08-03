@@ -52,10 +52,10 @@ const UserManager = () => {
   }, []);
 
   const sendMail = async (recAddress) => {
-    const res = await fetch('http://localhost:5000/util/sendmail', {
+    const res = await fetch('http://localhost:5001/util/sendmail', {
       method : 'POST',
       body : JSON.stringify({
-        from: "newsletterproject2022@gmail.com", // sender address
+        from: "us196000@gmail.com", // sender address
         to: recAddress, // list of receivers
         subject: subject,
         html : letterContent
@@ -142,19 +142,6 @@ const UserManager = () => {
             <tbody>{displayUser()}</tbody>
           </table>
         </div>
-<<<<<<< HEAD
-        {showUpdateForm ? (
-          <div className="col-md">
-            <UpdateUser
-              updateFormData={setUpdateFormData}
-              setShowUpdateForm={setShowUpdateForm}
-              getDataFromBackend={getDataFromBackend}
-            />
-          </div>
-        ) : (
-          " "
-        )}
-=======
         
       </div>
 
@@ -164,7 +151,6 @@ const UserManager = () => {
           <textarea className='form-control mt-4' rows="10" onChange={e => setLetterContent(e.target.value)}  ></textarea>
           <button className='btn btn-primary mt-4' onClick={sendNewsLetter}>Send</button>
         </div>
->>>>>>> 282a12e28ddeee7b4fb6ae2ba7b9dc36bfc3a9e2
       </div>
     </div>
   );

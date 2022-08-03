@@ -9,7 +9,7 @@ body{
     background-size: cover;
     background-position: center;
     height: 85vh;
-    overflow: hidden;
+    
     background-attachment: fixed;
 }
 .mycard{
