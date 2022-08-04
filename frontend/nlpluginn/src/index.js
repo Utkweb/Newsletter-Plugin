@@ -5,20 +5,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Plugin from './components/Plugin';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootEle = document.getElementById("root")
+if (rootEle) {
+  ReactDOM.createRoot(rootEle).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  )
+}
 
-const pluginEle = document.getElementById('plugin');
-
-if(pluginEle){
-  const pl = ReactDOM.createRoot(pluginEle);
-  pl.render(
-    
-<Plugin />  )
+const plEle = document.getElementById("plugin")
+const key = plEle.getAttribute("ownerKey")
+if (plEle) {
+  ReactDOM.createRoot(plEle).render(
+    <React.StrictMode>
+      <Plugin ownerKey={key} />
+    </React.StrictMode>,
+  )
 }
 
 // If you want to start measuring performance in your app, pass a function
