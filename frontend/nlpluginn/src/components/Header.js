@@ -23,6 +23,12 @@ const Header = () => {
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav list">
+              <NavLink className="nav-link active text-muted" aria-current="page" to='/signup'>
+                Signup
+              </NavLink>
+              <NavLink className="nav-link active text-muted" aria-current="page" to='/login'>
+                Login
+              </NavLink>
               <NavLink className="nav-link active text-muted" aria-current="page" to='/'>
                 Premium
               </NavLink>
@@ -40,6 +46,9 @@ const Header = () => {
               </NavLink>
               <NavLink className="nav-link text-muted" to="#">
                 Contact
+              </NavLink>
+              <NavLink className="nav-link text-muted" to="/usermanager">
+                Dashboard
               </NavLink>
                 {/* <i class="fas fa-search"></i> */}
             
