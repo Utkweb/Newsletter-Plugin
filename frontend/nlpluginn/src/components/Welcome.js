@@ -22,9 +22,9 @@ const Welcome = () => {
                   You can add even more powerful features through our premium
                   addons.
                 </p>
-                <a href="#" class="btn btn-primary">
+                <NavLink to='/signup' class="btn btn-primary">
                   Get started
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
