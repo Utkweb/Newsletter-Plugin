@@ -1,11 +1,13 @@
 import { Formik } from "formik";
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./Login.css";
+import { UserContext } from "./UseContext";
 
 const Login1 = () => {
     const navigate = useNavigate();
+    const { setLoggedIn, setCurrentUser } = useContext(UserContext);
     const userSubmit = async (formdata) => {
       console.log(formdata);
   

@@ -8,10 +8,14 @@ import UpdateUser from "./components/UpdateUser";
 import SignUp1 from "./components/SignUp1";
 import Login1 from "./components/Login1";
 import UserManager1 from "./components/UserManager1";
+import Login from "./components/Login";
+import { UserProvider } from "./components/UseContext";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
   return (
     <div>
+       <UserProvider user={currentUser}>
       <BrowserRouter>
         <Header></Header>
         <Routes>
@@ -22,9 +26,11 @@ function App() {
           <Route element={<UpdateUser />} path="updateUser" />
           <Route element={<SignUp1 />} path="signup" />
           <Route element={<Login1 />} path="login" />
+          {/* <Route element={<Login/>} path="logindemo" /> */}
           <Route element={<UserManager1 />} path="userdetails" />
         </Routes>
       </BrowserRouter>
+      </UserProvider>
     </div>
   );
 }

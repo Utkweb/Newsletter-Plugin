@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import './LoginDemo.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Login = () => {
       console.log("success");
       Swal.fire({
         icon: "success",
-        title: "Wellcome!!👌",
+        title: "Welcome!!👌",
         text: "Enter a new World!!",
       });
       navigate("/home");
@@ -39,128 +40,161 @@ const Login = () => {
 
   return (
     <div>
-      <br />
-      <h2 className="text-center">Sign In to your account</h2>
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
 
-      <section className="vh-100">
-        <div className="container-fluid h-custom">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-md-9 col-lg-6 col-xl-5">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                className="img-fluid"
-                alt="Sample image"
-              />
-            </div>
-            <div classNameName="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <Formik
+                <div class="text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style="width: 185px;" alt="logo"/>
+                  <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                </div>
+                <Formik
                 initialValues={{ email: "", password: "" }}
                 onSubmit={userSubmit}
               >
                 {({ values, handleChange, handleSubmit }) => (
                   <form onSubmit={handleSubmit}>
-                    <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                      <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-                      <button
-                        type="button"
-                        className="btn btn-primary btn-floating mx-1"
-                      >
-                        <i className="fab fa-facebook-f"></i>
-                      </button>
 
-                      <button
-                        type="button"
-                        className="btn btn-primary btn-floating mx-1"
-                      >
-                        <i className="fab fa-twitter"></i>
-                      </button>
+                {/* <!-- Email input --> */}
+                <div className="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    className="form-control form-control-lg"
+                    value={values.email}
+                    onChange={handleChange}
+                  />
+                  <label className="form-label" for="form1Example13">
+                    Email address
+                  </label>
+                </div>
+                <p>Please login to your account</p>
 
-                      <button
-                        type="button"
-                        className="btn btn-primary btn-floating mx-1"
-                      >
-                        <i className="fab fa-linkedin-in"></i>
-                      </button>
-                    </div>
+                {/* <!-- Password input --> */}
+                <div className="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="password"
+                    className="form-control form-control-lg"
+                    value={values.password}
+                    onChange={handleChange}
+                    
+                  />
+                  <label className="form-label" for="form1Example23">
+                    Password
+                  </label>
+                </div>
 
-                    <div className="divider d-flex align-items-center my-4">
-                      <p className="text-center fw-bold mx-3 mb-0">Or</p>
-                    </div>
+                <div className="d-flex justify-content-around align-items-center mb-4">
+                  {/* <!-- Checkbox --> */}
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="form1Example3"
+                    />
+                    <label className="form-check-label" for="form1Example3">
+                      {" "}
+                      Remember me{" "}
+                    </label>
+                  </div>
+                  <a href="#!">Forgot password?</a>
+                </div>
 
-                    <div className="form-outline mb-4">
-                      <input
-                        value={values.email}
-                        onChange={handleChange}
-                        type="email"
-                        id="email"
-                        className="form-control form-control-lg border"
-                        placeholder="Enter a valid email address"
-                      />
-                      <label className="form-label">
-                        Email address
-                      </label>
-                    </div>
+                {/* <!-- Submit button --> */}
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg btn-block"
+                >
+                  Sign in
+                </button>
 
-                    <div className="form-outline mb-3">
-                      <input
-                        value={values.password}
-                        onChange={handleChange}
-                        type="password"
-                        id="password"
-                        className="form-control form-control-lg border"
-                        placeholder="Enter password"
-                      />
-                      <label className="form-label">
-                        Password
-                      </label>
-                    </div>
+                <div className="divider d-flex align-items-center my-4">
+                  <p className="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                </div>
+                <div className="text-center">
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                  >
+                    <i className="fab fa-facebook-f"></i>
+                  </button>
 
-                    <div className="text-center text-lg-start mt-4 pt-2">
-                      <button
-                        type="submit"
-                        className="btn btn-primary btn-lg"
-                        style={{
-                          paddingLeft: "2.5rem",
-                          paddingRight: "2.5rem",
-                        }}
-                      >
-                        Login
-                      </button>
-                      <p className="small fw-bold mt-2 pt-1 mb-0">
-                        Don't have an account?{" "}
-                        <a to='/signup' className="link-danger">
-                          Register
-                        </a>
-                      </p>
-                    </div>
-                  </form>
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                  >
+                    <i className="fab fa-google"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                  >
+                    <i className="fab fa-twitter"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                  >
+                    <i className="fab fa-github"></i>
+                  </button>
+                </div>
+              </form>
                 )}
-              </Formik>
+                </Formik>
+                {/* <form>
+                  <p>Please login to your account</p>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form2Example11" class="form-control"
+                      placeholder="Phone number or email address" />
+                    <label class="form-label" for="form2Example11">Username</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form2Example22" class="form-control" />
+                    <label class="form-label" for="form2Example22">Password</label>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
+                      in</button>
+                    <a class="text-muted" href="#!">Forgot password?</a>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    <button type="button" class="btn btn-outline-danger">Create new</button>
+                  </div>
+
+                </form> */}
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-          <div className="text-white mb-3 mb-md-0">
-            Copyright © 2022. All rights reserved.
-          </div>
-
-          <div>
-            <a href="#!" className="text-white me-4">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#!" className="text-white me-4">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#!" className="text-white me-4">
-              <i className="fab fa-google"></i>
-            </a>
-            <a href="#!" className="text-white">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
+  </div>
+</section>
+</div>
   );
 };
 
